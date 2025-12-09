@@ -66,7 +66,7 @@ access_token: your-api-key
 ### 3. Classify Documents
 
 ```http
-POST /classify
+POST /classify_handling
 ```
 
 **Headers**:
