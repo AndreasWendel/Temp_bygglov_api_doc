@@ -106,6 +106,20 @@ handlingar: file3.docx
 }
 ```
 
+```json
+{
+  "handlingar": [
+    {
+      "handling": "document_2.pdf",
+      "type": "not classified",
+      "predicted": "Markplaneringsritning",
+      "confidence": 0.5021,
+      "tag": "manual_review_required"
+    }
+  ]
+}
+```
+
 **Response Fields**:
 
 - `handling`: Original filename
