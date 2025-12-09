@@ -219,52 +219,6 @@ curl -X POST "http://127.0.0.1:8000/classify_handling" \
   -F "handlingar=@document3.docx"
 ```
 
-### JavaScript (fetch) may remove
-
-```javascript
-const url = "http://127.0.0.1:8000/classify_handling";
-const apiKey = "your-api-key";
-
-// Single file
-const formData = new FormData();
-const fileInput = document.querySelector('input[type="file"]');
-formData.append('handlingar', fileInput.files[0]);
-
-fetch(url, {
-  method: 'POST',
-  headers: {
-    'access_token': apiKey
-  },
-  body: formData
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error('Error:', error));
-```
-
-### JavaScript (axios) may remove
-
-```javascript
-const axios = require('axios');
-const FormData = require('form-data');
-const fs = require('fs');
-
-const url = "http://127.0.0.1:8000/classify_handling";
-const apiKey = "your-api-key";
-
-const formData = new FormData();
-formData.append('handlingar', fs.createReadStream('document.pdf'));
-
-axios.post(url, formData, {
-  headers: {
-    'access_token': apiKey,
-    ...formData.getHeaders()
-  }
-})
-.then(response => console.log(response.data))
-.catch(error => console.error('Error:', error));
-```
-
 ---
 
 ## Rate Limiting & Best Practices
@@ -318,5 +272,3 @@ The API logs the following information:
 Logs are saved to the configured `LOG_PATH` and `FILE_PATH`.
 
 ---
-
-*For complete documentation, see [DOCUMENTATION.md](DOCUMENTATION.md)*
